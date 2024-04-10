@@ -149,10 +149,10 @@ android {
     }
 
     buildTypes {
-        release {
+        debug {
             applicationIdSuffix ".debug"
-            minifyEnabled false
-            shrinkResources false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField "String", "OPENSUBTITLES_API_KEY", "\"${OPENSUBTITLES_API_KEY_DEBUG}\""
             debuggable true //For "debug" banner on icon
@@ -160,7 +160,7 @@ android {
             manifestPlaceholders = [ app_display_name:"AFU Debug"]
         }
 
-        debug {
+        release {
             minifyEnabled true
             shrinkResources true
             signingConfig signingConfigs.release

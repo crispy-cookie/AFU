@@ -15,11 +15,14 @@ buildscript {
         API_REQ_STICKER_PACK_TOKEN = "c2PxRdya"
         OPENSUBTITLES_API_KEY_RELEASE = "5CZlDmqIhLoRcalZHXItm5Thwq57MDE2"
         OPENSUBTITLES_API_KEY_DEBUG = "5CZlDmqIhLoRcalZHXItm5Thwq57MDE2"
-        API_REQ_TRIAL_CODE_TRIAL_ACTIVE = "12341343"
+        // original: API_REQ_TRIAL_CODE_TRIAL_ACTIVE = "12341343"
+        API_REQ_TRIAL_CODE_TRIAL_ACTIVE = "45345234"
         API_REQ_TRIAL_CODE_TRIAL_EXPIRED = "24523424"
         API_REQ_TRIAL_CODE_TRIAL_INACTIVE = "33452345"
-        API_REQ_TRIAL_CODE_TRIAL_EXCLUSIVE = "45345234"
-        API_REQ_TRIAL_CODE_TRIAL_UNOFFICIAL = "34534247"
+        // original: API_REQ_TRIAL_CODE_TRIAL_EXCLUSIVE = "45345234"
+        API_REQ_TRIAL_CODE_TRIAL_EXCLUSIVE = "12341343"
+        // original: API_REQ_TRIAL_CODE_TRIAL_UNOFFICIAL = "34534247"
+        API_REQ_TRIAL_CODE_TRIAL_UNOFFICIAL = "12341343"
         API_REQ_TRIAL_TRIAL_ACTIVE = "trial_active"
         API_REQ_TRIAL_TRIAL_EXPIRED = "trial_expired"
         API_REQ_TRIAL_TRIAL_INACTIVE = "trial_inactive"
@@ -91,7 +94,8 @@ android {
                 abi {
                     enable true
                     reset()
-                    include 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a' //select ABIs to build APKs for
+                    // include 'x86', 'x86_64', 'armeabi-v7a', 'arm64-v8a' //select ABIs to build APKs for
+                    include 'arm64-v8a' //select ABIs to build APKs for
                     universalApk false //generate an additional APK that contains all the ABIs
                 }
             }
@@ -145,7 +149,7 @@ android {
     }
 
     buildTypes {
-        debug {
+        release {
             applicationIdSuffix ".debug"
             minifyEnabled false
             shrinkResources false
@@ -156,7 +160,7 @@ android {
             manifestPlaceholders = [ app_display_name:"AFU Debug"]
         }
 
-        release {
+        debug {
             minifyEnabled true
             shrinkResources true
             signingConfig signingConfigs.release

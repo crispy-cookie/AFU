@@ -43,7 +43,7 @@ jobs:
           arguments: assembledebug --stacktrace
         env:
           TZ: UTC
-      - name: Publish on Telegram
+      - name: Publish on NOPE
         run: |
           COMMIT_COUNT=$(git rev-list --count ${GITHUB_REF})
           working_dir=$PWD
@@ -52,13 +52,10 @@ jobs:
           7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on app-fdroid-armeabi-v7a-debug.7z app-fdroid-armeabi-v7a-debug.apk
           cp app-fdroid-arm64-v8a-debug.7z amaze-utils-fdroid-arm64-v8a-v0.1-$(echo $COMMIT_COUNT).7z
           cp app-fdroid-armeabi-v7a-debug.7z amaze-utils-fdroid-armeabi-v7a-v0.1-$(echo $COMMIT_COUNT).7z
-          echo $(curl -v -F "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" --header "Content-Type: multipart/form-data" -F document=@amaze-utils-fdroid-arm64-v8a-v0.1-$(echo $COMMIT_COUNT).7z https://api.telegram.org/${{ secrets.AMAZE_BOT_ID }}:${{ secrets.TELEGRAM_INTEGRATION_KEY }}/sendDocument)
-          echo $(curl -v -F "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" --header "Content-Type: multipart/form-data" -F document=@amaze-utils-fdroid-armeabi-v7a-v0.1-$(echo $COMMIT_COUNT).7z https://api.telegram.org/${{ secrets.AMAZE_BOT_ID }}:${{ secrets.TELEGRAM_INTEGRATION_KEY }}/sendDocument)
           cd $working_dir
           cd app/build/outputs/apk/play/debug
           7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on app-play-arm64-v8a-debug.7z app-play-arm64-v8a-debug.apk
           7z a -t7z -m0=lzma -mx=9 -mfb=64 -md=32m -ms=on app-play-armeabi-v7a-debug.7z app-play-armeabi-v7a-debug.apk
           cp app-play-arm64-v8a-debug.7z amaze-utils-play-arm64-v8a-v0.1-$(echo $COMMIT_COUNT).7z
           cp app-play-armeabi-v7a-debug.7z amaze-utils-play-armeabi-v7a-v0.1-$(echo $COMMIT_COUNT).7z
-          echo $(curl -v -F "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" --header "Content-Type: multipart/form-data" -F document=@amaze-utils-play-arm64-v8a-v0.1-$(echo $COMMIT_COUNT).7z https://api.telegram.org/${{ secrets.AMAZE_BOT_ID }}:${{ secrets.TELEGRAM_INTEGRATION_KEY }}/sendDocument)
-          echo $(curl -v -F "chat_id=${{ secrets.TELEGRAM_CHAT_ID }}" --header "Content-Type: multipart/form-data" -F document=@amaze-utils-play-armeabi-v7a-v0.1-$(echo $COMMIT_COUNT).7z https://api.telegram.org/${{ secrets.AMAZE_BOT_ID }}:${{ secrets.TELEGRAM_INTEGRATION_KEY }}/sendDocument)
+          

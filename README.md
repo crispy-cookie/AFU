@@ -1,3 +1,5 @@
+# This software is not provided by the original "teamamaze.xyz" developers and is provided without any warranty. Please don't report issues to teamamaze.xyz developers if something gets wrong using this software. This repository is only used for experimenting. Use the original software <a href="https://teamamaze.xyz">Amaze File Utilities</a> by teamamaze.xyz instead.
+
 [![GitHub release](https://img.shields.io/github/release/TeamAmaze/AmazeFileUtilities.svg?logo=github&logoColor=white&style=for-the-badge)](https://github.com/TeamAmaze/AmazeFileUtilities/releases)
 [![Chat on Telegram](https://img.shields.io/badge/Telegram-2CA5E0?style=for-the-badge&logo=telegram&logoColor=white)](https://t.me/AmazeFileManager)
 [![XDA Developers](https://img.shields.io/badge/XDA-Developers%20-%23AC6E2F.svg?&style=for-the-badge&logo=XDA-Developers&logoColor=white)](http://forum.xda-developers.com/android/apps-games/app-amaze-file-managermaterial-theme-t2937314)
